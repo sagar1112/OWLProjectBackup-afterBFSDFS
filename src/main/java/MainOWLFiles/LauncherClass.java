@@ -1,11 +1,15 @@
 //Main class with main method to execute all the methods of other classes
 package MainOWLFiles;
+
 import org.semanticweb.HermiT.Reasoner;
 import org.semanticweb.owlapi.apibinding.OWLManager;
 import org.semanticweb.owlapi.model.*;
 
 import java.io.File;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+import java.util.Set;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -27,6 +31,7 @@ public class LauncherClass {
         String pizzalink = reader.nextLine();
         System.out.println("Enter the file where to pic:local , host");
         String fromWhere = reader.nextLine();
+        reader.nextLine();
         //String pizzalink = pizzalinktemp + " ";
         System.out.println("Enter approach TO start with : single,multi,fork,all");
         String approachName = reader.nextLine();
@@ -372,7 +377,7 @@ public class LauncherClass {
                             // TODO: print some message
                             //OwlSequentialParsing.nonAddedElelemntInRecursion.add(element);
                             if(logging)
-                            System.out.println("Missing predecessor nodes in reasoner"+currentObj +"is not present in child list of reasoner.." + element);
+                            System.out.println("Missing predecessor nodes in reasoner"+currentObj +"is not present in parent list of reasoner.." + element);
                         }
                         //System.out.println("successful 1"+currentObj);
                     }
@@ -384,7 +389,7 @@ public class LauncherClass {
                             // TODO: print some message
                             //OwlSequentialParsing.nonAddedElelemntInRecursion.add(element);
                             if(logging)
-                            System.out.println("Missing predecessor nodes in final graph"+predecessorElement +"is not present in child list of final graph.." + element);
+                            System.out.println("Missing predecessor nodes in final graph"+predecessorElement +"is not present in parent list of final graph.." + element);
                         }
 
                     }
